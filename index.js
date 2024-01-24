@@ -1,13 +1,28 @@
 function hasTargetSum(array, target) {
   // Write your algorithm here
+  const seenNumbers = {};
+  for (const number of array){
+    const complement = target - number;
+    if (complement in seenNumbers) return true;
+    seenNumbers[number] = true;
+  }
+  return false;
 }
 
 /* 
   Write the Big O time complexity of your function here
+ // O(n)
 */
 
 /* 
   Add your pseudocode here
+   // Create an empty hash map to store seen numbers
+   // Iterate through each number in the array
+   // Calculate the complement needed to reach the target
+   // Check if the complement is in the seenNumbers hash map
+   // A pair has been found, return true
+   // Add the current number to the seenNumbers hash map
+   // No pair was found, return false
 */
 
 /*
